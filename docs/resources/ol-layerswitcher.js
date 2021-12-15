@@ -146,7 +146,7 @@ var LayerSwitcher = function (_Control) {
         LayerSwitcher.enableTouchScroll_(_this.panel);
 
         var this_ = _this;
-         /*colocando onmouseover a button no necesito darle click a la pestaña de capas*/
+
         button.onmouseover = function (e) {
             this_.showPanel();
         };
@@ -157,7 +157,7 @@ var LayerSwitcher = function (_Control) {
             e.preventDefault();
         };
 
-        this_.panel.onmouseover = function (e) {
+        this_.panel.onmouseout = function (e) {
             e = e || window.event;
             if (!this_.panel.contains(e.toElement || e.relatedTarget)) {
                 this_.hidePanel();
